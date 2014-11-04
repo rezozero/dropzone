@@ -309,7 +309,7 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
       autoQueue: true,
       addRemoveLinks: false,
       previewsContainer: null,
-      dictDefaultMessage: "Drop files here to upload",
+      dictDefaultMessage: "Drop files here to upload or click to open your explorer",
       dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.",
       dictFallbackText: "Please use the fallback form below to upload your files like in the olden days.",
       dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
@@ -340,7 +340,7 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
           }
         }
         if (!messageElement) {
-          messageElement = Dropzone.createElement("<div class=\"dz-message\"><span></span></div>");
+          messageElement = Dropzone.createElement("<div class=\"dz-message\"><span></span><div class=\"circles-icons\"><div class=\"circle circle-1\"></div><div class=\"circle circle-2\"></div><div class=\"circle circle-3\"></div><div class=\"circle circle-4\"></div><div class=\"circle circle-5\"></div><i class=\"uk-icon-rz-duplicate\"></i></div></div>");
           this.element.appendChild(messageElement);
         }
         span = messageElement.getElementsByTagName("span")[0];
@@ -688,7 +688,7 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
         this.element.setAttribute("enctype", "multipart/form-data");
       }
       if (this.element.classList.contains("dropzone") && !this.element.querySelector(".dz-message")) {
-        this.element.appendChild(Dropzone.createElement("<div class=\"dz-default dz-message\"><span>" + this.options.dictDefaultMessage + "</span></div>"));
+        this.element.appendChild(Dropzone.createElement("<div class=\"dz-default dz-message\"><span>" + this.options.dictDefaultMessage + "</span><div class=\"circles-icons\"><div class=\"circle circle-1\"></div><div class=\"circle circle-2\"></div><div class=\"circle circle-3\"></div><div class=\"circle circle-4\"></div><div class=\"circle circle-5\"></div><i class=\"uk-icon-rz-duplicate\"></i></div></div>"));
       }
       if (this.clickableElements.length) {
         setupHiddenFileInput = (function(_this) {
